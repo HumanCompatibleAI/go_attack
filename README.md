@@ -2,16 +2,19 @@
 
 This repository contains code for studying the adversarial robustness of KataGo.
 
-Read about our research here: https://arxiv.org/abs/2211.00241.
+Read about our research:
+- [Adversarial Policies Beat Superhuman Go AIs](https://arxiv.org/abs/2211.00241)
+- [Can Go AIs Be Adversarially Robust?](https://arxiv.org/abs/2406.12843)
 
 View our website here: https://goattack.far.ai/.
 
-To run our adversary with Sabaki, see [this guide](sabaki/README.md).
+Our models and training data are available on our [Google
+Drive](https://drive.google.com/drive/folders/1-bGX-NQOh6MuRPoXJgYHb9-jWRJvviSg?usp=drive_link).
+To run our adversaries with Sabaki, see [this guide](sabaki/README.md).
 
 # Development / testing information
 
-To clone this repository,
-run one of the following commands
+To clone this repository, run one of the following commands:
 ```
 # Via HTTPS
 git clone --recurse-submodules https://github.com/AlignmentResearch/go_attack.git
@@ -20,7 +23,7 @@ git clone --recurse-submodules https://github.com/AlignmentResearch/go_attack.gi
 git clone --recurse-submodules git@github.com:AlignmentResearch/go_attack.git
 ```
 
-You can run `pip install -e .[dev]` inside the project root directory to install all necessary dependencies.
+Run `pip install -e .[dev]` inside the project root directory to install all necessary dependencies.
 
 To run a pre-commit script before each commit, run `pre-commit install` (`pre-commit` should already have been installed in the previous step).
 You may also want to run `pre-commit install` from `engines/KataGo-custom` to install that repository's respective commit hook.
@@ -31,6 +34,10 @@ Modifications to KataGo *are not* tracked in this repository and should instead 
 
 - [engines/KataGo-custom](engines/KataGo-custom) tracks the `stable` branch of the `KataGo-custom` repository.
 - [engines/KataGo-raw](engines/KataGo-raw) tracks the `master` branch of https://github.com/lightvector/KataGo.
+- [engines/KataGo-tensorflow](engines/KataGo-tensorflow) is a version of
+  KataGo-custom prior to merging KataGo version v1.12, which switched the
+  training code from TensorFlow to PyTorch. We use KataGo-tensorflow to
+  fine-tune our existing TensorFlow adversaries that pre-dated v1.12.
 
 ## Individual containers
 
